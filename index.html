@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<link href="style.css" rel="stylesheet" type="text/css">
+	<!-- include google fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,300italic" rel="stylesheet" type="text/css">
+	<title>2013 College Scorecard</title>
+</head>
+
+<script src="d3.min.js"></script>
+<script src="//d3js.org/topojson.v1.min.js"></script>
+
+<body>
+	<div style="width: 500px; text-align: center; overflow-wrap: break-word; margin:0 auto;">
+		<header>United States College Data 2013</header>
+		<p>A presentation of college data for 2013. To provide consitency, null valued schools are ignored and only public and private schools are considered (no for profits).</p>
+		<header>By Jon Alvarado</header>
+		<header>About the Data</header>
+		<p>The data set comes from the data.gov database. This data is compilation of different college stats compiled together to make it easier for prospective college students to decide their future schools. The original size of the data set is 7805 rows by 1730 columns.
+		<br>
+		No heavy duty processing went into filtering the data. Because I wasn't sure how the values were going to distribute over the graphs, I kept whole columns of only the statistics I thought I was going to use, such as SAT_SCORES, AVG_COST of attendence, RET_RATE of schools, etc.<br>
+		Link to the data source below<br>
+		</p>
+		<header>Motivation</header>
+		<p>
+			Raw data provided by source is unreadable at best. To make the information easier to digest for prospective college students, I've summarized the data provided through graphical representation. 
+		</p>
+		<header>Geographical Representation and Bar Graph Insights</header>
+		<p>Use the map to explore average rates, costs, and scores for all 50 states and DC. The bar<br>
+			 graph presents the top 10 for a certain average. Zooming into a state provides insight into<br>
+			 the schools within the state which is further reflected in the bar graph which updates to<br>
+			 present the top 10 schools within a state for a certain statistic.<br>
+			 <br>
+			 The scatter plot is to be used as a summary of all the information in one graph. It provides<br>
+			 a view of all the average touch points while staying relevant to the selected data view by reflecting the same color coded information.</p>
+	</div>
+
+	<button class="button" id="buttonAdm">Admission Rate</button>
+	<button class="button" id="buttonCos">Average Cost</button>
+	<button class="button" id="buttonSAT">Average SAT</button>
+	<button class="button" id="buttonRet">Retention Rate</button>
+	<svg id="map"></svg>
+	<header><br>Top/Bottom Ten View</header>
+	<svg id="bar"></svg>
+	<header><br>Scatter Plot Summary</header>
+	<svg id="scatter"></svg>
+	<p><a href="https://catalog.data.gov/dataset/college-scorecard">College Scorecard Data Source</a> &bullet; <a href="https://bl.ocks.org/mbostock/4090848">JSON source</a></p>
+	<script src="colorbrewer.js"></script>
+	<script src="chart.js"></script>
+	<script src="scatter.js"></script>
+	<script src="final.js"></script>
+</body>
